@@ -66,7 +66,7 @@ public class TestDAO {
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
-				TestDO testDO = new TestDO();
+				TestDO testDO = new TestDO(sql, sql, sql, sql, sql);
 				testDO.setId(rs.getString("id"));
 				testDO.setGithub(rs.getString("github"));
 				
