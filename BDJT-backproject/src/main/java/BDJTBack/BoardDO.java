@@ -1,17 +1,28 @@
 package BDJTBack;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class BoardDO {
 	private String photo;
     private String title;
     private String url;
     private String skill;
-    private Date creationdate;
+    private LocalDateTime creationDate;
     private int orderRcmnd;
     private String id;
     
-    public BoardDO() {
+    public BoardDO(String photo, String title, String url, String skill,
+    	LocalDateTime creationDate, int orderRcmnd, String id) {
+    	
+    	super();
+    	this.photo = photo;
+    	this.title = title;
+    	this.url = url;
+    	this.skill = skill;
+    	this.creationDate = creationDate;
+    	this.orderRcmnd = orderRcmnd;
+    	this.id = id;
+    	
     }
 
 	public String getPhoto() {
@@ -46,12 +57,12 @@ public class BoardDO {
 		this.skill = skill;
 	}
 
-	public Date getCreationdate() {
-		return creationdate;
+	public LocalDateTime getCreationDate() {
+		return creationDate;
 	}
 
-	public void setCreationdate(Date creationdate) {
-		this.creationdate = creationdate;
+	public void setCreationDate(LocalDateTime creationDate) {
+		this.creationDate = creationDate;
 	}
 
 	public int getOrderRcmnd() {
