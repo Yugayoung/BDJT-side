@@ -2,23 +2,23 @@
 	import="java.util.*, test.*"%>
 
 <%
-	TestDAO userDAO = (TestDAO)session.getAttribute("userDAO");
+	TestDAO testDAO = (TestDAO)session.getAttribute("testDAO");
 
-	if(userDAO == null) {
-		userDAO = new TestDAO();
-		session.setAttribute("userDAO", userDAO);
+	if(testDAO == null) {
+		testDAO = new TestDAO();
+		session.setAttribute("testDAO", testDAO);
 	}
 	
 	if(request.getMethod().equals("POST")) {
 		request.setCharacterEncoding("UTF-8");
 		
-		TestDO userDO = new TestDO();
-		userDO.setUsername(request.getParameter("username"));
-		userDO.setEmail(request.getParameter("email"));
+		TestDO testDO = new TestDO();
+		testDO.setId(request.getParameter("id"));
+		testDO.setGithub(request.getParameter("github"));
 		
-		userDAO.insertUserInfo(userDO);
+		testDAO.insertUserInfo(testDO);
 	}
 	
-	request.setAttribute("userList", userDAO.getAllUserInfo());
-	pageContext.forward("/WEB-INF/views/chap09/jdbcTest_v3.jsp");
+	request.setAttribute("userList", testDAO.users());
+	pageContext.forward("/WEB-INF/test/Test.jsp");
 %>

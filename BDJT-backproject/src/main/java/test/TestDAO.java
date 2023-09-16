@@ -18,7 +18,7 @@ public class TestDAO {
 		if(conn == null) {
 			try {
 				Class.forName(jdbc_driver);
-				conn = DriverManager.getConnection(jdbc_url, "scott","tiger");
+				conn = DriverManager.getConnection(jdbc_url, "bdjt","bdjt");
 			}
 			catch(Exception e) {
 				e.printStackTrace();
@@ -26,19 +26,20 @@ public class TestDAO {
 		}
 	}
 	
-	public int insertUserInfo(TestDO userDO) {
+	public int insertUserInfo(TestDO testDO) {
 		int rowCount = 0;
 		
-		sql = "insert into user_info (username, email) values (?, ?)";
+		sql = "insert into users (id, github) values (?, ?)";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, userDO.getUsername());
-			pstmt.setString(2, userDO.getEmail());
+			pstmt.setString(1, testDO.getId());
+			pstmt.setString(2, testDO.getGithub());
 			
 			pstmt.executeUpdate();
 		}
 		catch(Exception e) {
+			System.out.println(" 로드 !");
 			e.printStackTrace();
 		}
 		finally {
@@ -47,6 +48,7 @@ public class TestDAO {
 					pstmt.close();
 				}
 				catch(Exception e) {
+					System.out.println("JDBC 드라이버 !");
 					e.printStackTrace();
 				}
 			}
@@ -55,24 +57,26 @@ public class TestDAO {
 		return rowCount;
 	}
 	
-	public ArrayList<TestDO> getAllUserInfo() {
+	public ArrayList<TestDO> users() {
 		ArrayList<TestDO> userList = new ArrayList<TestDO>();
-		sql = "select username, email from user_info";
+		sql = "select id, github from users";
 		
 		try {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
-				TestDO userDO = new TestDO();
-				userDO.setUsername(rs.getString("username"));
-				userDO.setEmail(rs.getString("email"));
+				TestDO testDO = new TestDO();
+				testDO.setId(rs.getString("id"));
+				testDO.setGithub(rs.getString("github"));
 				
-				userList.add(userDO);
+				userList.add(testDO);
 			}
 		}
 		catch(Exception e) {
+			System.out.println("JDBC 드라이버 로드 !");
 			e.printStackTrace();
+			
 		}
 		finally {
 			if(stmt != null) {
@@ -80,7 +84,9 @@ public class TestDAO {
 					stmt.close();
 				}
 				catch(Exception e) {
+					System.out.println("JDBC 드라이버 로드 실패 !");
 					e.printStackTrace();
+					
 				}
 			}
 		}

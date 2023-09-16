@@ -21,13 +21,13 @@ CREATE TABLE board (
 
 -- 회원 테이블 샘플
 INSERT INTO users (id, name, password, birthdate, github)
-VALUES ('user1', 'John Doe', 'password1', TO_DATE('1990-05-15', 'YYYY-MM-DD'), 'https://github.com/user1');
+VALUES ('user1', 'John', 'password1', TO_DATE('1990-05-15', 'YYYY-MM-DD'), 'https://github.com/user1');
 
 INSERT INTO users (id, name, password, birthdate, github)
-VALUES ('user2', 'Jane Smith', 'password2', TO_DATE('1985-09-22', 'YYYY-MM-DD'), 'https://github.com/user2');
+VALUES ('user2', 'Jane', 'password2', TO_DATE('1985-09-22', 'YYYY-MM-DD'), 'https://github.com/user2');
 
 INSERT INTO users (id, name, password, birthdate, github)
-VALUES ('user3', 'Bob Johnson', 'password3', TO_DATE('1995-03-10', 'YYYY-MM-DD'), 'https://github.com/user3');
+VALUES ('user3', 'Bob', 'password3', TO_DATE('1995-03-10', 'YYYY-MM-DD'), 'https://github.com/user3');
 
 commit;
 
@@ -43,4 +43,4 @@ VALUES ('photo3.jpg', 'Sample Post 3', 'https://example.com/post3', 'JavaScript'
 
 commit;
 
-select * from user_info;
+select * from users;
