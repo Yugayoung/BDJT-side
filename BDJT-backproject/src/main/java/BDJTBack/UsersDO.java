@@ -46,5 +46,4 @@ public class UsersDO {
 	public void setGithub(String github) {
 		this.github = github;
 	}
-
 }
