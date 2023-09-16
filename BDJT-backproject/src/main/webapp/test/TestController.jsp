@@ -2,10 +2,10 @@
 	import="java.util.*, test.*"%>
 
 <%
-	UserInfoDAO userDAO = (UserInfoDAO)session.getAttribute("userDAO");
+	TestDAO userDAO = (TestDAO)session.getAttribute("userDAO");
 
 	if(userDAO == null) {
-		userDAO = new UserInfoDAO();
+		userDAO = new TestDAO();
 		session.setAttribute("userDAO", userDAO);
 	}
 	
