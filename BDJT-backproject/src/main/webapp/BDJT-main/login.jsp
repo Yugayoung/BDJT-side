@@ -42,7 +42,7 @@
                             <input class="login__input" type="password" id="password" placeholder="비밀번호"> <br>
                         </label>
                         
-                        <button class="login__button" type="submit">로그</button>
+                        <button class="login__button" type="submit">로그인</button>
                         <button class="signup__button" id="signup-button">회원가입</button>
                     </div>
                 </form>
