@@ -6,7 +6,14 @@ public class TestDO {
 	private String birthdate;
 	private String github;
 	
-	public TestDO () {
+	public TestDO (String id, String name, String password,
+			String birthdate, String github) {
+		super();
+		this.id = id;
+		this.name =name;
+		this.password = password;
+		this.birthdate = birthdate;
+		this.github = github;
 	}
 	public String getId() {
 		return id;
