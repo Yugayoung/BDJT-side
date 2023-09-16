@@ -3,7 +3,7 @@ package test;
 import java.sql.*;
 import java.util.*;
 
-public class UserInfoDAO {
+public class TestDAO {
 	
 	private Connection conn;
 	private Statement stmt;
@@ -11,7 +11,7 @@ public class UserInfoDAO {
 	private ResultSet rs;
 	private String sql;
 	
-	public UserInfoDAO() {
+	public TestDAO() {
 		String jdbc_driver = "oracle.jdbc.driver.OracleDriver";
 		String jdbc_url = "jdbc:oracle:thin:@localhost:1521:XE";
 		
@@ -26,7 +26,7 @@ public class UserInfoDAO {
 		}
 	}
 	
-	public int insertUserInfo(testDO userDO) {
+	public int insertUserInfo(TestDO userDO) {
 		int rowCount = 0;
 		
 		sql = "insert into user_info (username, email) values (?, ?)";
@@ -55,8 +55,8 @@ public class UserInfoDAO {
 		return rowCount;
 	}
 	
-	public ArrayList<UserInfoDO> getAllUserInfo() {
-		ArrayList<UserInfoDO> userList = new ArrayList<UserInfoDO>();
+	public ArrayList<TestDO> getAllUserInfo() {
+		ArrayList<TestDO> userList = new ArrayList<TestDO>();
 		sql = "select username, email from user_info";
 		
 		try {
@@ -64,7 +64,7 @@ public class UserInfoDAO {
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
-				UserInfoDO userDO = new UserInfoDO();
+				TestDO userDO = new TestDO();
 				userDO.setUsername(rs.getString("username"));
 				userDO.setEmail(rs.getString("email"));
 				
