@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	import="java.util.*, chap09.*"%>
+	import="java.util.*, test.*"%>
 
 <%
 	UserInfoDAO userDAO = (UserInfoDAO)session.getAttribute("userDAO");
@@ -12,7 +12,7 @@
 	if(request.getMethod().equals("POST")) {
 		request.setCharacterEncoding("UTF-8");
 		
-		UserInfoDO userDO = new UserInfoDO();
+		TestDO userDO = new TestDO();
 		userDO.setUsername(request.getParameter("username"));
 		userDO.setEmail(request.getParameter("email"));
 		

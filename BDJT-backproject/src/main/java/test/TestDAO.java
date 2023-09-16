@@ -1,4 +1,4 @@
-package chap09;
+package test;
 
 import java.sql.*;
 import java.util.*;
@@ -26,7 +26,7 @@ public class UserInfoDAO {
 		}
 	}
 	
-	public int insertUserInfo(UserInfoDO userDO) {
+	public int insertUserInfo(testDO userDO) {
 		int rowCount = 0;
 		
 		sql = "insert into user_info (username, email) values (?, ?)";
