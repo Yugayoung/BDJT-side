@@ -1,0 +1,398 @@
+@charset "UTF-8";
+
+:root {
+    /* App Colors */
+    --color-primary: var(--color-lightgray);
+    --color-primary-variant: var(--color-black);
+    --color-accent: var(--color-blue);
+    --color-accent-variant: var(--color-gray);
+    --color-text: var(--color-navy);
+    
+    /* Colors */
+    --color-blue: rgb(116, 151, 190);
+    --color-navy: rgb(37, 69, 103);
+    --color-gray: rgb(208, 208, 226);
+    --color-lightgray: rgb(235, 236, 243);
+    --color-black: rgb(14, 21, 27);
+    --color-white: white;
+    --color-whitegray: rgb(235, 236, 243);
+  
+    /* Size */
+    --size-max-width: 1200px;
+
+     /* Divider */
+    --divider-single-wave: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"> <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" ></path> </svg>');
+    --divider-multi-wave: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"> <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" ></path> </svg>');
+    --divider-arrow: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"> <path d="M649.97 0L550.03 0 599.91 54.12 649.97 0z" ></path> </svg>');
+
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+
+  /* Common */
+.section {
+  padding: 4rem;
+  text-align: center;
+}
+
+.max-container {
+  max-width: var(--size-max-width);
+  margin: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+/* Home */
+
+  #home {
+      position: relative;
+      color: var(--color-text);
+  }
+
+  .home__container {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    padding: 3rem;
+    overflow: hidden;
+    align-items: center; 
+  }
+
+  .home__title {
+    font-size: 1.7rem;
+  }
+
+  .home__description {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .home__title--strong {
+    color: var(--color-accent);
+  }
+  .home__logo {
+    width: 250px;
+    margin-bottom: 1rem;
+  }
+  
+  .home__sideImg {
+
+    width: 500px;
+  }
+  
+  .home__fileButton {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-left: 8rem;
+  }
+  .home__fileButton:hover {
+    background-color: transparent;
+    color: var(--color-text);
+    outline: 2px solod var(--color-accent);
+  }
+
+  /* #home::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+   */
+
+
+/* FileUpload */
+
+#contents {
+  background-color: var(--color-whitegray); 
+  display: flex; /* 추가 */
+  justify-content: center; /* 추가 */
+  align-items: center; /* 추가 */
+}
+
+.fileUpload {
+  background-color: var(--color-whitegray);
+  display: inline-block;
+  margin: 1rem;
+  
+
+}
+
+.fileUpload__title {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding-top: 1rem;
+}
+
+.fileUpload__input {
+  display: flex;
+  align-items: center; 
+  margin: 0.7rem 0.7rem;
+  border-radius: 8px;
+  padding: 1rem;
+  gap: 1.3rem;
+  overflow: hidden;
+  background-color: var(--color-white);
+  box-shadow: 0 3px 10px rgb(0,0,0,0.2);
+}
+
+.fileUpload__inputDiv {
+  display: flex;
+  flex-direction: column; /* 수직 정렬을 위해 컬럼으로 변경 */
+  gap: 0.7rem;
+  /* 임시 */
+  /* box-shadow: 0 3px 10px rgb(0,0,0,0.2); */
+}
+
+.fileUpload__submit {
+  display: flex;
+  flex-direction: column; /* 수직 정렬을 위해 컬럼으로 변경 */
+  align-items: center;
+  padding-top: 1.rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  gap: 0.1rem;
+}
+
+.fileUpload__submitButton {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  
+}
+
+.fileUpload__submitIcon {
+  font-size: 3rem;
+  transition: all 300ms ease;
+  color: rgb(112, 107, 255);
+  cursor: pointer; /* 클릭 가능한 커서 모양 설정 */
+  user-select: none; /* 텍스트 선택 비활성화 */
+}
+
+.fileUpload__submitMessage {
+  font-size: 1rem;
+  color: var(--color-accent-variant);
+  font-weight: bold;
+  display: none;
+}
+
+.fileUpload__submitButton:hover .fileUpload__submitIcon {
+  transform: rotate(12deg) scale(1.2);
+}
+
+/* 입력 필드들의 스타일 */
+.fileInput,
+.titleInput,
+.urlInput,
+.techStack{
+  width: 100%; 
+  padding: 0.5rem;
+  border: 1px solid var(--color-gray);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+} 
+
+/* 프로젝트 게시판 */
+#gallery {
+  background-color: var(--color-accent-variant);
+  grid-row: span 3;
+  padding: 0rem 1rem 2rem 1rem;
+  /* text-align: center;
+  margin-left: 5rem; */
+}
+
+.galleryAll__title {
+  color: var(--color-text);
+  padding: 1.3rem 0rem 0.7rem 0rem;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.gallery__design {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 0.7rem 0.7rem;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  overflow: hidden;
+  background-color: var(--color-white);
+  box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
+    /* 내용이 없을 때의 높이 지정 */
+    min-height: 300px; 
+}
+
+.gallery__image-container {
+  width: 25%; 
+  padding: 0rem 0.;
+  box-sizing: border-box; 
+}
+
+.gallery__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.gallery__title {
+  margin-top: 1rem;
+  font-size: 17px;
+  color: var(--color-text);
+  text-align: center; 
+  border: 3rem;
+}
+
+.empty-gallery-message {
+  font-size: 2rem;
+  color: var(--color-accent-variant);
+  font-weight: bold;
+  text-align: center; 
+  margin: auto;
+}
+
+/* 좋아요 버튼 */
+.gallery__like-button {
+  display: inline-block;
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  margin-right: 0.1rem;
+}
+
+.gallery__like-icon {
+  font-size: 1.4rem;
+  transition: all 300ms ease;
+  color: rgb(112, 107, 255);
+  cursor: pointer; 
+  user-select: none; 
+}
+
+.gallery__likes {
+  display: inline-block;
+  margin-right: 0rem; 
+}
+
+.gallery__like-button:hover .gallery__like-icon {
+  transform: scale(1.2);
+}
+
+.gallery__array {
+  display: flex;
+  align-items: center;
+}
+
+.gallery__array-text {
+  margin-right: 0rem;
+  padding: 0rem 0.4rem 0.1rem 0.7rem;
+  padding-bottom: 0.1rem;
+  color: var(--color-text);
+}
+
+.gallery__array-buttons {
+  display: flex;
+
+  align-items: center;
+}
+
+.gallery__array-divider {
+  margin: 0 0.3rem;
+  border-right: 2px solid #ccc;
+  height: 1rem;
+}
+
+.sortByLatestButton, .sortByLikesButton{
+  background-color: transparent;
+  color: var(--color-accent);
+  border: none;
+  font-size: 1rem;
+  padding: 0rem 0.7rem 0rem 0.4rem;
+}
+
+.sortByLatestButton:hover, .sortByLikesButton:hover {
+  color: var(--color-text);
+}
+
+/* 검색창 스타일 */
+.gallery__search {
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  background-color: white; /* 배경색 추가 */
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 4px; /* 아이콘과 검색창 사이 간격 조절 */
+}
+
+.gallery__searchInput {
+  flex: 1;
+  padding: 10px;
+  border: none; /* 검색창의 테두리 제거 */
+  font-size: 16px;
+  outline: none; /* 포커스 효과 제거 */
+  background-color: transparent;
+}
+
+.gallery__searchButton {
+  background-color: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  outline: none; /* 포커스 효과 제거 */
+}
+
+/* 검색어 제안 목록 스타일 (그대로 유지) */
+.search-suggestions {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  border-radius: 0 0 4px 4px;
+  z-index: 1;
+}
+
+.search-suggestion-item {
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+
+#gallery__contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 5rem;
+}
+
