@@ -58,7 +58,7 @@
                     class="signup__input"
                     type="password"
                     id="confirm__password"
-                    placeholder="비밀번호 확"
+                    placeholder="비밀번호 확인"
                   />
                 </label>
 
