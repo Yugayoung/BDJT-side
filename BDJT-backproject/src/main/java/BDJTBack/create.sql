@@ -16,7 +16,7 @@ CREATE TABLE board (
     creationdate DATE,
     orderRcmnd NUMBER,
     id VARCHAR2(20),
-    FOREIGN KEY (id) REFERENCES 회원(id)
+    FOREIGN KEY (id) REFERENCES users(id)
 );
 
 -- 회원 테이블 샘플
