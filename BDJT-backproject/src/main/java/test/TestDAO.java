@@ -18,7 +18,7 @@ public class TestDAO {
 		if(conn == null) {
 			try {
 				Class.forName(jdbc_driver);
-				conn = DriverManager.getConnection(jdbc_url, "bdjt","bdjt");
+				conn = DriverManager.getConnection(jdbc_url, "system","oracle");
 			}
 			catch(Exception e) {
 				e.printStackTrace();

@@ -1,9 +1,6 @@
 -- 회원 테이블 생성
 CREATE TABLE users (
-    id VARCHAR2(20) PRIMARY KEY,
-    name VARCHAR2(5),
-    password VARCHAR2(20),
-    birthdate DATE,
+    id VARCHAR2(20),
     github VARCHAR2(30)
 );
 
