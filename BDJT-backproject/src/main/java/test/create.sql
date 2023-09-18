@@ -43,4 +43,7 @@ VALUES ('photo3.jpg', 'Sample Post 3', 'https://example.com/post3', 'JavaScript'
 
 commit;
 
+-- 조
+select * from users u , board b where u.id = b.id; 
+
 select * from users;

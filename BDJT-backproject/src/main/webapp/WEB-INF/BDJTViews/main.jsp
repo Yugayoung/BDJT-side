@@ -1,6 +1,6 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@include file = "header.jsp" %>
+<%@include file = "/WEB-INF/BDJTViews/header.jsp" %>
         <!-- main -->
         <main> 
             <!-- Top -->
@@ -8,7 +8,7 @@
                 <div class="home__container">
                     <section class="home__post">
                         <h2 class="home__description">다른 개발자들은 어떤 프로젝트를 만들었을까?</h2>
-                        <img class="home__logo" src="images/beforelogocolor.png" alt="logo" />
+                        <img class="home__logo" src="${pageContext.request.contextPath }/BDJT/images/beforelogocolor.png" alt="logo" />
                         <h2 class="home__title">
                             개발자 토이프로젝트 모아보기 서비스 <br /> <br />
                         </h2>
@@ -21,7 +21,7 @@
                         <a class="home__fileButton" >FILEUPLOAD</a>
                     </section>
                     <section class="home__img">
-                        <img class="home__sideImg" src="images/sideImg.png" alt="sideImg" />
+                        <img class="home__sideImg" src="${pageContext.request.contextPath}/BDJT/images/sideImg.png" alt="sideImg" />
                     </section>
                     
 

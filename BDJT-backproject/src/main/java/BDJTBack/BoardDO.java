@@ -11,19 +11,23 @@ public class BoardDO {
     private int orderRcmnd;
     private String id;
     
-    public BoardDO(String photo, String title, String url, String skill,
-    	LocalDateTime creationDate, int orderRcmnd, String id) {
-    	
-    	super();
-    	this.photo = photo;
-    	this.title = title;
-    	this.url = url;
-    	this.skill = skill;
-    	this.creationDate = creationDate;
-    	this.orderRcmnd = orderRcmnd;
-    	this.id = id;
-    	
-    }
+//    public BoardDO(String photo, String title, String url, String skill,
+//    	LocalDateTime creationDate, int orderRcmnd, String id) {
+//    	
+//    	super();
+//    	this.photo = photo;
+//    	this.title = title;
+//    	this.url = url;
+//    	this.skill = skill;
+//    	this.creationDate = creationDate;
+//    	this.orderRcmnd = orderRcmnd;
+//    	this.id = id;
+//    	
+//    }
+
+	public BoardDO() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getPhoto() {
 		return photo;

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%pageContext.setAttribute( "newLine", "\n" );%>:
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,8 +21,8 @@
     <script src="https://kit.fontawesome.com/89490613c7.js" crossorigin="anonymous"></script>
 
         <!-- CSS -->
-    <link rel="stylesheet" href="css/header__style.css" />
-    <link rel="stylesheet" href="css/main__style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/BDJT/css/header__style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/BDJT/css/main__style.css" />
 
     <script type="module" src="header.js" defer></script>
     </head>
@@ -27,6 +30,6 @@
          <!-- Header -->
         <header class="header">
             <section class="header__logo">
-                    <img class="header__logo__img" src="images/logo.ico" alt="logo">
+                    <img class="header__logo__img" src="${pageContext.request.contextPath }/BDJT/images/logo.ico" alt="logo">
             </section>
         </header>
