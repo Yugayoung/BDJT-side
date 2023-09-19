@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     	  pageEncoding="UTF-8"
     	  import="BDJTBack.*"
@@ -5,6 +6,12 @@
 <%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
  
 <%@ include file = "/WEB-INF/BDJTViews/header.jsp" %>
+
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@include file = "/WEB-INF/BDJTViews/header.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
         <!-- main -->
         <main> 
             <!-- Top -->
@@ -38,21 +45,27 @@
                 <div class="max-container">
                     <section class="fileUpload">
                         <h1 class="fileUpload__title">Upload a completed project</h1>
-                            <form class="fileUpload__input">
+                        	<form class="fileUpload__input" enctype="multipart/form-data" method="post" action="BoardController">
                                 <div class="fileUpload__inputDiv">
-                                    <input type="file" class="fileInput" />
-                                    <input type="title" class="titleInput" placeholder="제목 입력" />
-                                    <input type="url" class="urlInput" placeholder="URL 입력" />
-                                    <select class="techStack" name="techStack">
+                                    <input type="file" name="photo" class="fileInput" /> 
+                                    <input type="text" name="title" class="titleInput" placeholder="제목 입력" />
+        							<input type="url" name="url" class="urlInput" placeholder="URL 입력" />
+        							<input type="text" name="skill" class="skillInput" placeholder="기술 입력" />
+                                    <!-- <select class="techStack" name="techStack">
                                         <option value="NONE">기술 스택을 선택해주세요.</option>
                                         <option value="HTML">HTML</option>
                                         <option value="CSS">CSS</option>
                                         <option value="React">React</option>
-                                        <!-- 다른 기술 스택 항목들을 추가할 수 있습니다 -->
-                                    </select>
+                                        다른 기술 스택 항목들을 추가할 수 있습니다
+                                    </select> -->
                                 </div>
                                 <div class="fileUpload__submit">
+
                                     <button class="fileUpload__submitButton" type="submit"><i class="fa-solid fa-upload fileUpload__submitIcon"></i></button>
+
+
+                                	<input type = "hidden" name = "action" value = "upload" />
+                                    <input class="fileUpload__submitButton" type="submit" value = "업로" required/><!-- <i class="fa-solid fa-upload fileUpload__submitIcon"></i></button> -->
 
                                     <p class="fileUpload__submitMessage">업로드 성공!</p>
                                 </div>
