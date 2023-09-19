@@ -111,7 +111,7 @@ h2 {
   background-color: var(--color-text);
 }
 
-.signup__button {
+#signup__button {
   border: none;
   background-color: var(--color-accent-variant);
   font-weight: 700;

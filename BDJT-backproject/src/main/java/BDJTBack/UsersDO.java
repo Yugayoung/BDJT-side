@@ -6,16 +6,7 @@ public class UsersDO {
 	private String password;
 	private String birthdate;
 	private String github;
-	
-//	public UsersDO (String id, String name, String password,
-//			String birthdate, String github) {
-//		super();
-//		this.id = id;
-//		this.name =name;
-//		this.password = password;
-//		this.birthdate = birthdate;
-//		this.github = github;
-//	}
+
 	public UsersDO() {
 		// TODO Auto-generated constructor stub
 	}

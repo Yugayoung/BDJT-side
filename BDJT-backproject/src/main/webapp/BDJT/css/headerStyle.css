@@ -1,43 +1,36 @@
 @charset "UTF-8";
-
 :root {
     /* App Colors */
     --color-primary: var(--color-black);
     --color-primary-variant: var(--color-gray);
     --color-accent: var(--color-blue);
     --color-accent-variant: var(--color-orange);
-    --color-text: var(--color-white);  
+    --color-text: var(--color-white);
     /* Colors */
-    --color-white: #ffffff;
-    --color-black: #050a13;
-    --color-blue: #03e8f9;
-    --color-orange: #fd6413;
-    --color-gray: #1b1e26;
+    --color-white: #FFFFFF;
+    --color-black: #050A13;
+    --color-blue: #03E8F9;
+    --color-orange: #FD6413;
+    --color-gray: #1B1E26;
 }
-
 * {
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
 }
-
-
 /* Common */
 .section {
     padding: 4rem;
     text-align: center;
 }
-
 /* Header */
 .header {
-    background-color: transparent;
+    background-color: var(--color-white);
     position: fixed;
     top: 0;
     width: 100%;
@@ -46,25 +39,14 @@ body {
     align-items: center;
     transition: all 300ms ease;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 999;
 }
-
-.header--dark {
-    background-color: var(--color-primary);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
 .header__logo {
     display: flex;
     align-items: center;
     gap: 8px;
 }
-
 .header__logo__img {
     width: 8.5rem;
     margin: 0;
-}
-
-.header.transparent {
-    background-color: transparent; /* 스크롤 내려갈 때 투명한 배경색으로 변경 */
-    box-shadow: none;
 }
