@@ -9,9 +9,9 @@ CREATE TABLE users (
 
 -- 게시판 테이블 생성
 CREATE TABLE board (
-    photo VARCHAR2(255),
+    photo VARCHAR2(50),
     title VARCHAR2(15),
-    url VARCHAR2(255),
+    url VARCHAR2(100),
     skill VARCHAR2(20),
     creationdate DATE,
     orderRcmnd NUMBER,
@@ -21,10 +21,10 @@ CREATE TABLE board (
 
 -- 회원 테이블 샘플
 INSERT INTO users (id, name, password, birthdate, github)
-VALUES ('user1', 'John', 'password1', TO_DATE('1990-05-15', 'YYYY-MM-DD'), 'https://github.com/user1');
+VALUES ('user1', 'John', 'password1', TO_DATE('1990-05-15', 'YYYY-MM-DD'), 'github@gmail.com');
 
 INSERT INTO users (id, name, password, birthdate, github)
-VALUES ('user2', 'Jane', 'password2', TO_DATE('1985-09-22', 'YYYY-MM-DD'), 'https://github.com/user2');
+VALUES ('user2', 'Jane', 'p', TO_DATE('1985-09-22', 'YYYY-MM-DD'), 'https://github.com/user2');
 
 INSERT INTO users (id, name, password, birthdate, github)
 VALUES ('user3', 'Bob', 'password3', TO_DATE('1995-03-10', 'YYYY-MM-DD'), 'https://github.com/user3');

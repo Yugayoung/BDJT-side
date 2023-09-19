@@ -42,6 +42,7 @@ h2 {
 }
 
 /* Sign Up */
+
 .login__logo {
   align-items: center;
   padding-bottom: 20px;
@@ -52,7 +53,7 @@ h2 {
 }
 
 #signup {
-  display: flex;
+  display: none;
   background-color: var(--color-primary);
   text-align: center;
   align-items: center;

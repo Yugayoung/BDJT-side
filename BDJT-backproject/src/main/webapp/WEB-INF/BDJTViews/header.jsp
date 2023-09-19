@@ -21,15 +21,10 @@
     <script src="https://kit.fontawesome.com/89490613c7.js" crossorigin="anonymous"></script>
 
         <!-- CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/BDJT/css/header__style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/BDJT/css/headerStyle.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath }/BDJT/css/main__style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/BDJT/css/signUpStyle.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/BDJT/css/loginStyle.css" />
+    
 
-    <script type="module" src="header.js" defer></script>
-    </head>
-    <body>
-         <!-- Header -->
-        <header class="header">
-            <section class="header__logo">
-                    <img class="header__logo__img" src="${pageContext.request.contextPath }/BDJT/images/logo.ico" alt="logo">
-            </section>
-        </header>
+
