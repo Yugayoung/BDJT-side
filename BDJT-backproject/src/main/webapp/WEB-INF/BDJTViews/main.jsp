@@ -1,7 +1,17 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    	  pageEncoding="UTF-8"
+    	  import="BDJTBack.*"
+    	  %>
+<%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+ 
+<%@ include file = "/WEB-INF/BDJTViews/header.jsp" %>
+
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file = "/WEB-INF/BDJTViews/header.jsp" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 
     </head>
     <body>
@@ -12,6 +22,7 @@
             </section>
         </header>
         
+
         <!-- main -->
         <main> 
             <!-- Top -->
@@ -33,6 +44,7 @@
                     </section>
                     <section class="home__img">
                         <img class="home__sideImg" src="${pageContext.request.contextPath}/BDJT/images/sideImg.png" alt="sideImg" />
+                        
                     </section>
                     
 
@@ -57,8 +69,19 @@
                                         <!-- 다른 기술 스택 항목들을 추가할 수 있습니다 -->
                                     </select>
                                 </div>
+
+                                <div class="fileUpload__submit">
+
+                                    <button class="fileUpload__submitButton" type="submit"><i class="fa-solid fa-upload fileUpload__submitIcon"></i></button>
+
+
+                                	<input type = "hidden" name = "action" value = "upload" />
+                                    <input class="fileUpload__submitButton" type="submit" value = "업로" required/><!-- <i class="fa-solid fa-upload fileUpload__submitIcon"></i></button> -->
+
+
                                 <div class="fileUpload__submit">                               
                                     <button  name = "action" value = "upload" class="fileUpload__submitButton" type="submit"><i class="fa-solid fa-upload fileUpload__submitIcon"></i></button>                          
+
                                     <p class="fileUpload__submitMessage">업로드 성공!</p>
                                 </div>
                             </form>
@@ -86,14 +109,27 @@
                         	</div>
                         </form>
                     </div>                    
+
+                  <div class="gallery__design">
+			            <c:forEach items="${galleryList}" var="boardDO">
+			                <div class="gallery__image-container">
+			                    <img src="${boardDO.photo}" class="gallery__image" alt="${boardDO.title}">
+			                    <p class="gallery__title">${boardDO.title}</p>
+								<button class="gallery__like-button"><i class="fa-regular fa-thumbs-up gallery__like-icon"></i></button>
+			                </div>
+			            </c:forEach>
+			            <!-- forEach 루프의 끝 -->
+			        </div>
+                    <section id="gallery__contents"></section>
+                    </div>            
+
                     <div class="gallery__design">
 
                     <section id="gallery__contents">
                     
                     </section>
                     </div>
-                </div>
-            
+              </div>
             </section>
         </main>
         

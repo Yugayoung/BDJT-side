@@ -73,7 +73,9 @@ public class BoardController extends HttpServlet {
         return items;
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
+        
+    	String action = request.getParameter("action");
+        
         List<FileItem> items = uploadFiles(request); // 파일 업로드 처리 및 업로드된 파일 목록 얻기
         System.out.println(action+"1");
         if (action != null && action.equals("upload")) {
