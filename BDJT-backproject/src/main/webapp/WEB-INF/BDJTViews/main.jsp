@@ -7,12 +7,6 @@
  
 <%@ include file = "/WEB-INF/BDJTViews/header.jsp" %>
 
- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@include file = "/WEB-INF/BDJTViews/header.jsp" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-
     </head>
     <body>
          <!-- Header -->
@@ -40,7 +34,11 @@
                         </h2>
                             
                         
-                        <a class="home__fileButton" >FILEUPLOAD</a>
+                        <div class="home__button">
+                            <button class="home__fileButton">FILEUPLOAD</button>
+                            <input type="submit" name="logout" value="LOGOUT" class="home__logoutButton" action="LogoutController" />
+                        </div>
+
                     </section>
                     <section class="home__img">
                         <img class="home__sideImg" src="${pageContext.request.contextPath}/BDJT/images/sideImg.png" alt="sideImg" />
@@ -70,15 +68,7 @@
                                     </select>
                                 </div>
 
-                                <div class="fileUpload__submit">
-
-                                    <button class="fileUpload__submitButton" type="submit"><i class="fa-solid fa-upload fileUpload__submitIcon"></i></button>
-
-
-                                	<input type = "hidden" name = "action" value = "upload" />
-                                    <input class="fileUpload__submitButton" type="submit" value = "업로" required/><!-- <i class="fa-solid fa-upload fileUpload__submitIcon"></i></button> -->
-
-
+                              
                                 <div class="fileUpload__submit">                               
                                     <button  name = "action" value = "upload" class="fileUpload__submitButton" type="submit"><i class="fa-solid fa-upload fileUpload__submitIcon"></i></button>                          
 
@@ -121,15 +111,7 @@
 			            <!-- forEach 루프의 끝 -->
 			        </div>
                     <section id="gallery__contents"></section>
-                    </div>            
-
-                    <div class="gallery__design">
-
-                    <section id="gallery__contents">
-                    
-                    </section>
-                    </div>
-              </div>
+                    </div>          
             </section>
         </main>
         
@@ -149,6 +131,17 @@
                     	header.style.display = 'none'; 
                 	}
             	});
+        	});
+        	
+        	const contents = document.getElementById("contents");
+        	const fileUploadButton = document.querySelector(".home__fileButton");
+
+        	fileUploadButton.addEventListener("click", function() {
+        	  if (contents.style.display === "none" || contents.style.display === "") {
+        	    contents.style.display = "block";
+        	  } else {
+        	    contents.style.display = "none";
+        	  }
         	});
     	</script>
 <%@include file = "footer.jsp" %>
