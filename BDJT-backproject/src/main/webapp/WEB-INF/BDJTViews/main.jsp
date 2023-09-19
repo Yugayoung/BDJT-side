@@ -1,16 +1,14 @@
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page  language="java" contentType="text/html; charset=UTF-8"
     	  pageEncoding="UTF-8"
     	  import="BDJTBack.*"
+    	  import="com.oreilly.servlet.*, com.oreilly.servlet.multipart.*"
+		  import="java.util.*"
     	  %>
 <%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
  
 <%@ include file = "/WEB-INF/BDJTViews/header.jsp" %>
 
- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@include file = "/WEB-INF/BDJTViews/header.jsp" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
     </head>
@@ -70,15 +68,7 @@
                                     </select>
                                 </div>
 
-                                <div class="fileUpload__submit">
-
-                                    <button class="fileUpload__submitButton" type="submit"><i class="fa-solid fa-upload fileUpload__submitIcon"></i></button>
-
-
-                                	<input type = "hidden" name = "action" value = "upload" />
-                                    <input class="fileUpload__submitButton" type="submit" value = "업로" required/><!-- <i class="fa-solid fa-upload fileUpload__submitIcon"></i></button> -->
-
-
+                            
                                 <div class="fileUpload__submit">                               
                                     <button  name = "action" value = "upload" class="fileUpload__submitButton" type="submit"><i class="fa-solid fa-upload fileUpload__submitIcon"></i></button>                          
 
@@ -121,15 +111,7 @@
 			            <!-- forEach 루프의 끝 -->
 			        </div>
                     <section id="gallery__contents"></section>
-                    </div>            
-
-                    <div class="gallery__design">
-
-                    <section id="gallery__contents">
-                    
-                    </section>
                     </div>
-              </div>
             </section>
         </main>
         
