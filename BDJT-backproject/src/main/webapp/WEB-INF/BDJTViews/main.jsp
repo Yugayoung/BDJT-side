@@ -1,7 +1,9 @@
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page  language="java" contentType="text/html; charset=UTF-8"
     	  pageEncoding="UTF-8"
     	  import="BDJTBack.*"
+    	  import="com.oreilly.servlet.*, com.oreilly.servlet.multipart.*"
+		  import="java.util.*"
     	  %>
 <%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
  
@@ -68,7 +70,6 @@
                                     </select>
                                 </div>
 
-                              
                                 <div class="fileUpload__submit">                               
                                     <button  name = "action" value = "upload" class="fileUpload__submitButton" type="submit"><i class="fa-solid fa-upload fileUpload__submitIcon"></i></button>                          
 
@@ -111,7 +112,9 @@
 			            <!-- forEach 루프의 끝 -->
 			        </div>
                     <section id="gallery__contents"></section>
-                    </div>          
+
+                    </div>
+
             </section>
         </main>
         

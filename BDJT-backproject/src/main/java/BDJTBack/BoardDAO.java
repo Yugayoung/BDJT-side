@@ -1,11 +1,9 @@
 package BDJTBack;
-import java.io.File;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.tomcat.util.http.fileupload.FileItem;
 public class BoardDAO {
 	
 	private Connection conn;
@@ -13,7 +11,6 @@ public class BoardDAO {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	private String sql;
-	private String savePath = "./views/image";
 	
 	public BoardDAO() {
 		String jdbc_driver = "oracle.jdbc.driver.OracleDriver";
@@ -54,6 +51,7 @@ public class BoardDAO {
 	                // 데이터베이스에 새 게시물 추가
 	                sql = "INSERT INTO board (photo, title, url, skill, creationDate, orderRcmnd, id) " +
 	                      "VALUES (?, ?, ?, ?, ?, ?, ?)";
+	                
 	                pstmt = conn.prepareStatement(sql);
 	                pstmt.setString(1, newBoard.getPhoto());
 	                pstmt.setString(2, newBoard.getTitle());
