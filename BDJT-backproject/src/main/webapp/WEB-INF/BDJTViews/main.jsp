@@ -37,8 +37,11 @@
                             
                         
                         <div class="home__button">
-                            <button class="home__fileButton">FILEUPLOAD</button>
-                            <input type="submit" name="logout" value="LOGOUT" class="home__logoutButton" action="LogoutController" />
+                            <button class="home__fileButton">FILEUPLOAD</button>      
+                            <form method="post" action="UserController">
+                            	<button class="home__logoutButton" type="submit" name="action" value="logout">LOGOUT</button>
+                            </form>        
+                            
                         </div>
 
                     </section>
@@ -52,8 +55,8 @@
             </section>
 
             <!-- FileUpload -->
-            <section id="contents">
-                <div class="max-container">
+            <section id="contents" >
+                <div class="max-container displayNone">
                     <section class="fileUpload">
                         <h1 class="fileUpload__title">Upload a completed project</h1>
                         	<form class="fileUpload__input" enctype="multipart/form-data" method="post" action="BoardController">
@@ -136,7 +139,7 @@
             	});
         	});
         	
-        	const contents = document.getElementById("contents");
+        	const contents = document.querySelector(".displayNone");
         	const fileUploadButton = document.querySelector(".home__fileButton");
 
         	fileUploadButton.addEventListener("click", function() {
@@ -144,7 +147,7 @@
         	    contents.style.display = "block";
         	  } else {
         	    contents.style.display = "none";
-        	  }
+        	  } 
         	});
     	</script>
 <%@include file = "footer.jsp" %>
