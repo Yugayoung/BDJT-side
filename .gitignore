@@ -1,2 +1,8 @@
 /.metadata/
 /bin/
+/bin/
+
+##eclipse
+**/.settings
+**/.classpath
+**/.project
