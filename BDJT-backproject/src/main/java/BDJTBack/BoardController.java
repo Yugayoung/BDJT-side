@@ -73,10 +73,15 @@ public class BoardController extends HttpServlet {
 
         if (action != null && action.equals("upload")) {
             // 파일 업로드 액션
+
             
             
             System.out.println(directory);
 
+            String directory = getServletContext().getRealPath("/Users/9a_orn_/Employment/full-stack/project/BDJT-side/BDJT-backproject/src/main/webapp/BDJT/images"); // 업로드 디렉토리 경로 수정
+            int sizeLimit = 1024 * 1024 * 5; // 5MB 제한
+            MultipartRequest multi = new MultipartRequest(request, directory, sizeLimit,
+                    "UTF-8", new DefaultFileRenamePolicy());
             // 디렉토리 생성
             File uploadDir = new File(directory);
             if (!uploadDir.exists()) {

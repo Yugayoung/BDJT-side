@@ -11,6 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.apache.tomcat.util.http.fileupload.FileItem;
 import org.apache.tomcat.util.http.fileupload.FileItemFactory;
 import org.apache.tomcat.util.http.fileupload.FileUploadException;
@@ -43,7 +45,7 @@ public class UserController extends HttpServlet {
             boolean loggedIn = usersDAO.loginUser(id, password);
             
             if (loggedIn == true) {
-                response.sendRedirect(request.getContextPath() + "/WEB-INF/BDJTViews/main.jsp");
+                response.sendRedirect(request.getContextPath() + "/BoardController");
                 System.out.println(loggedIn);
             } 
             else if (loggedIn == false){
@@ -78,8 +80,16 @@ public class UserController extends HttpServlet {
             } else {
                 request.setAttribute("registrationError", "회원가입에 실패하였습니다.");
                 request.getRequestDispatcher("/WEB-INF/BDJTViews/signUp.jsp").forward(request, response);
+            	}
+        	}
+        	else if (action.equals("logout")) { 
+        		System.out.println(action);
+                HttpSession session = request.getSession(false); 
+                if (session != null) {
+                    session.invalidate(); 
+                }
+                response.sendRedirect(request.getContextPath() + "/UserController");
             }
-        }
     }
 }
 

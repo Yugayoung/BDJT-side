@@ -126,6 +126,10 @@
   align-items: center; /* 추가 */
 }
 
+.displayNone {
+	display: none;
+}
+
 .fileUpload {
   background-color: var(--color-whitegray);
   display: inline-block;
