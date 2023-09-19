@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>file upload test</title>
+	<script>
+	function uploadHandler(event) {
+		let extCheck = false;	
+		let imageFile = document.querySelector('#imageFile');
+		let imgType = document.querySelector('#imgType');
+		let fileExt = imageFile.value.split('.')[1];
+		
+		if(fileExt === 'png' || fileExt === 'jpg' || fileExt === 'jpeg' || fileExt === 'gif') {
+			if(imgType.value.toLowerCase() === fileExt) {
+				extCheck = true;
+			}
+		}
+		
+		if(!extCheck) {
+			event.preventDefault();
+			alert('선택한 이미지 종류에 맞는 올바른 이미지를 선택하세요!');
+		}
+	}
+	
+	function init() {
+		document.querySelector('#uploadForm').addEventListener('submit', uploadHandler);
+		
+	}
+	
+	window.addEventListener('load', init);
+	</script>
+	<style>
+	label {
+		display: inline-block;
+		width: 150px;
+		margin-bottom: 15px;
+	}
+		
+	</style>
+</head>
+<body>
+
+	<h2>File Upload Example</h2>
+	<hr />
+	
+	<h4>cos.jar 라이브러리를 /WEB-INF/lib 폴더로 저장하고 업로드 폴더 생성 후 실습을 진행하세요!</h4>
+	
+	<form method="POST" enctype="multipart/form-data" action="uploadProc.jsp" id="uploadForm">
+	<fieldset>
+		<legend>이미지 파일 업로드 폼</legend>
+		
+		<label for="desc">이미지 설명</label>
+		<input type="text" name="desc" id="desc" value="" /><br />
+		
+		<label for="imgType">파일 종류</label>
+		<select name="imgType" id="imgType">
+			<option selected>PNG</option>
+			<option>JPG</option>
+			<option>GIF</option>
+		</select><br />
+		
+		<label for="imageFile">파일 선택</label>
+		<input type="file"" name="imageFile" id="imageFile" required /><br />
+		
+		<input type="submit" value="업로드" />
+	</fieldset>		
+	</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,10 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@include file = "/WEB-INF/BDJTViews/header.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    	  pageEncoding="UTF-8"
+    	  import="BDJTBack.*"
+    	  %>
+<%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+ 
+<%@ include file = "/WEB-INF/BDJTViews/header.jsp" %>
         <!-- main -->
         <main> 
             <!-- Top -->
@@ -22,6 +26,7 @@
                     </section>
                     <section class="home__img">
                         <img class="home__sideImg" src="${pageContext.request.contextPath}/BDJT/images/sideImg.png" alt="sideImg" />
+                        
                     </section>
                     
 
@@ -48,6 +53,7 @@
                                 </div>
                                 <div class="fileUpload__submit">
                                     <button class="fileUpload__submitButton" type="submit"><i class="fa-solid fa-upload fileUpload__submitIcon"></i></button>
+
                                     <p class="fileUpload__submitMessage">업로드 성공!</p>
                                 </div>
                             </form>
@@ -76,12 +82,18 @@
                             <div class="search-results" id="searchResults"></div>
                         </div>
                     </div>                    
-                    <div class="gallery__design">
-
+                  <div class="gallery__design">
+			            <c:forEach items="${galleryList}" var="boardDO">
+			                <div class="gallery__image-container">
+			                    <img src="${boardDO.photo}" class="gallery__image" alt="${boardDO.title}">
+			                    <p class="gallery__title">${boardDO.title}</p>
+								<button class="gallery__like-button"><i class="fa-regular fa-thumbs-up gallery__like-icon"></i></button>
+			                </div>
+			            </c:forEach>
+			            <!-- forEach 루프의 끝 -->
+			        </div>
                     <section id="gallery__contents"></section>
-                    </div>
-                </div>
-            
+                    </div>            
             </section>
         </main>
 <%@include file = "footer.jsp" %>
