@@ -105,7 +105,7 @@ public class BoardDAO {
                 LocalDateTime creationDate = LocalDateTime.parse(dateString, formatter);
                 boardDO.setCreationDate(creationDate);
 				boardDO.setOrderRcmnd(rs.getInt("orderRcmnd"));
-				userDO.setGithub(rs.getString("github"));
+//				userDO.setGithub(rs.getString("github"));
 				
 				galleryList.add(boardDO);
 			}
