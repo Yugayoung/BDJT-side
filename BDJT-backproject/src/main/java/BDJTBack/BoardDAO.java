@@ -86,7 +86,10 @@ public class BoardDAO {
 //	초기, 최신순 갤러리 업로드
 	public ArrayList<BoardDO> initialBoard() {
 		ArrayList<BoardDO> galleryList = new ArrayList<BoardDO>();
-		sql = "select photo, title, url, skill, creationDate, orderRcmnd from board";
+		sql = "SELECT b.photo, b.title, b.url, b.skill, b.creationDate, b.orderRcmnd, u.github " +
+			      "FROM users u, board b " +
+			      "WHERE u.id = b.id " +
+			      "ORDER BY b.orderRcmnd DESC";
 		try {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);

@@ -59,29 +59,21 @@ public class BoardController extends HttpServlet {
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
-        String directory = "D:/000.develop/BF-semi-Project/BDJT-side/BDJT-backproject/BDJT-backproject/src/main/webapp/upload";
+        String directory = "/Users/9a_orn_/Employment/full-stack/project/BDJT-side/BDJT-backproject/src/main/webapp/upload";
         // 디렉토리 관련 오류 시 디렉토리 재설정 필요
         int sizeLimit = 1024 * 1024 * 5; // 5MB 제한
-        
+        MultipartRequest multi = new MultipartRequest(request, directory, sizeLimit,
+                "UTF-8", new DefaultFileRenamePolicy());
     	System.out.println(directory); 
     	
-    	MultipartRequest multi = new MultipartRequest(request, directory, sizeLimit,
-                "UTF-8", new DefaultFileRenamePolicy());
-        
 
     	String action = multi.getParameter("action");
 
         if (action != null && action.equals("upload")) {
             // 파일 업로드 액션
 
-            
-            
             System.out.println(directory);
-
-            String directory = getServletContext().getRealPath("/Users/9a_orn_/Employment/full-stack/project/BDJT-side/BDJT-backproject/src/main/webapp/BDJT/images"); // 업로드 디렉토리 경로 수정
-            int sizeLimit = 1024 * 1024 * 5; // 5MB 제한
-            MultipartRequest multi = new MultipartRequest(request, directory, sizeLimit,
-                    "UTF-8", new DefaultFileRenamePolicy());
+            
             // 디렉토리 생성
             File uploadDir = new File(directory);
             if (!uploadDir.exists()) {
