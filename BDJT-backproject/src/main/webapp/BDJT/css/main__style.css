@@ -94,29 +94,27 @@
     width: 500px;
   }
   
-  .home__fileButton {
+  .home__button {
+    display: flex;
+    align-items: center;
+    padding-left: 10rem;
+	}
+
+    .home__fileButton, .home__logoutButton {
     display: inline-block;
     background-color: var(--color-accent);
     color: var(--color-white);
     padding: 0.5rem 1rem;
+    margin: 0rem 0.7rem;
     font-weight: bold;
     border-radius: 4px;
-    margin-left: 8rem;
-  }
-  .home__fileButton:hover {
+    border: none;
+	}
+  .home__fileButton:hover, .home__logoutButton:hover {
     background-color: transparent;
     color: var(--color-text);
     outline: 2px solod var(--color-accent);
-  }
-
-  /* #home::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-   */
+  } 
 
 
 /* FileUpload */

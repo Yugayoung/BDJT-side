@@ -19,7 +19,7 @@
                             <input class="login__input" type="password" id="password" name="password" placeholder="비밀번호"> <br>
                         </label>
                         <button class="login__button" type="submit" name="action" value="login">로그인</button>
-                        <button class="signup__button" id="signup-button" name="action" type="button">회원가입</button>
+                        <button class="signup__button" id="signup-button" name="action" value="register" type=submit">회원가입</button>
                         
                         <p class="login__error">
                 			<%= request.getAttribute("loginError") %>
@@ -39,5 +39,11 @@
         </div>
       </div>
     </footer>
+    
+    <!-- <script>
+    	document.getElementById("signup-button").addEventListener("click", function() {
+    		window.location.href = "${pageContext.request.contextPath}/WEB-INF/BDJTViews/signUp.jsp"
+    	})
+    </script> -->
   </body>
 </html>

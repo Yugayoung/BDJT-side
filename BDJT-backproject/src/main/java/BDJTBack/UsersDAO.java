@@ -81,7 +81,6 @@ public class UsersDAO {
 	        
 	    } catch (SQLException e) {
 	        e.printStackTrace();
-	        System.out.println(loggedIn+"1");
 	    }
 
 	    return loggedIn;
