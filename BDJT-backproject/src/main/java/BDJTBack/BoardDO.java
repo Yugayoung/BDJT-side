@@ -70,5 +70,8 @@ public class BoardDO {
 	public void setId(String id) {
 		this.id = id;
 	}
-
+//	이거 추가
+	public void setUsers(UsersDO usersDO) {
+		this.id=usersDO.getId();
+	}
 }

@@ -84,7 +84,7 @@
             </section>
 
             <!-- Gallery -->
-            <section id="gallery">
+            <section id="gallery__all">
                 <div class="max-container">
                     <h1 class="galleryAll__title">Discover the best portfolio</h1>
                     <div class="gallery__array">
@@ -105,19 +105,23 @@
                     </div>                    
 
                   <div class="gallery__design">
-                  		<!-- <section id="gallery"> -->
-                  			<c:forEach items="${galleryList}" var="BoardDO">
+
+                  		<section class="gallery__contents">
+                  			<c:forEach items="${galleryList}" var="boardDO">
                   					<div class="gallery__image-container">
-			                    		<img src="${boardDO.getPhoto}" class="gallery__image" alt="${boardDO.url}"> 
-				                    		<p class="gallery__title">${boardDO.title}</p>
-				                    		<p class="gallery__skill">${boardDO.getSkill}</p>
-				                    		<p class="gallery__likes">${boardDO.orderRcmnd}</p>
+                  						<p class="gallery__title">${boardDO.title}</p>
+			                    		<img src="${boardDO.photo}" class="gallery__image" alt="Uploaded Photo" onclick="redirectToURL('${boardDO.url}')">			                    		
+			                    		<p class="gallery__title">${boardDO.skill}</p>			                   
+
 										<button class="gallery__like-button"><i class="fa-regular fa-thumbs-up gallery__like-icon"></i></button>
+										<p class="gallery__likes">${boardDO.orderRcmnd}</p>
+										<p class="gallery__title">${usersDO.github}</p>	
 			        				</div>
 			            	</c:forEach>
 			            <!-- forEach 루프의 끝 -->
-                    <!-- 	</section> -->
+                   		</section>
 			        </div>
+			    </div>
             </section>
         </main>
         
@@ -149,5 +153,9 @@
         	    contents.style.display = "none";
         	  } 
         	});
+        	
+        	function redirectToURL(url) {
+                window.location.href = url;
+            }
     	</script>
 <%@include file = "footer.jsp" %>
