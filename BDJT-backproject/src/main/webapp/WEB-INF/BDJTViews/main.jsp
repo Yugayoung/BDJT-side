@@ -107,7 +107,7 @@
                   						<p class="gallery__title">${boardDO.title}</p>
 			                    		<img src="${boardDO.photo}" class="gallery__image" alt="Uploaded Photo" onclick="redirectToURL('${boardDO.url}')">			                    		
 			                    		<p class="gallery__title">${boardDO.skill}</p>	
-       									<p class="gallery__title">${boardDO.github}</p>   
+       									<p class="gallery__github">${boardDO.github}</p>   
 			        				</div>
 			            	</c:forEach>
 			            <!-- forEach 루프의 끝 -->
