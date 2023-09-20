@@ -116,6 +116,8 @@ public class BoardController extends HttpServlet {
             // newBoard.setId(userId);
             // 데이터베이스에 새 게시물 추가
             boardDAO.insertuploadInfo(newBoard);
+            
+            request.setAttribute("uploadedPhoto", photo);
             System.out.println(action + "4");
         }
         // 업로드 후 다시 갤러리 페이지로 리다이렉트 또는 원하는 페이지로 이동

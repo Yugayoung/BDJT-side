@@ -108,7 +108,7 @@
                   		<section class="gallery__contents">
                   			<c:forEach items="${galleryList}" var="boardDO">
                   					<div class="gallery__image-container">
-			                    		<img src="${boardDO.photo}" class="gallery__image" alt="${boardDO.url}"> 
+			                    		<img src="${boardDO.photo}" class="gallery__image" alt="Uploaded Photo" onclick="redirectToURL('${boardDO.url}')">
 			                    		<p class="gallery__title">${boardDO.title}</p>
 			                    		<p class="gallery__title">${boardDO.skill}</p>			                   
 										<button class="gallery__like-button"><i class="fa-regular fa-thumbs-up gallery__like-icon"></i></button>
@@ -150,5 +150,9 @@
         	    contents.style.display = "none";
         	  } 
         	});
+        	
+        	function redirectToURL(url) {
+                window.location.href = url;
+            }
     	</script>
 <%@include file = "footer.jsp" %>
