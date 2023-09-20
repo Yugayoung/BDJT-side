@@ -32,32 +32,36 @@ public class BoardController extends HttpServlet {
 
         // 기본 동작: 갤러리 페이지 로드
         ArrayList<BoardDO> galleryList = boardDAO.initialBoard();
-        
+      
         if (action != null) {
+        	System.out.println("galleryList1" + galleryList);
             	if (action.equals("search")) {
+            		System.out.println("galleryList2" + galleryList);
                 // 기술 검색
             		String skill = request.getParameter("skill");
             		 	if (skill != null && skill.equals("html")) {
-            	        	System.out.println("Action: " + galleryList);
+            		 		  System.out.println("galleryList" + galleryList); 
             	            galleryList = boardDAO.searchBoardByTechStack("HTML");
             	        } else if (skill != null && skill.equals("css")) {
+            	        	  System.out.println("galleryList" + galleryList); 
             	            galleryList = boardDAO.searchBoardByTechStack("CSS");
             	        } else if (skill != null && skill.equals("react")) {
+            	        	System.out.println("galleryList" + galleryList); 
             	            galleryList = boardDAO.searchBoardByTechStack("React");
             	        }
             }
         }
+    	System.out.println(galleryList); 
         request.setAttribute("galleryList", galleryList);
         request.getRequestDispatcher("/WEB-INF/BDJTViews/main.jsp").forward(request, response);
     }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
-        String directory = "/Users/9a_orn_/Employment/full-stack/project/BDJT-side/BDJT-backproject/src/main/webapp/upload";
+        String directory = "D:\\000.develop\\BF-semi-Project\\BDJT-side\\BDJT-backproject\\BDJT-backproject\\src\\main\\webapp/upload";
         int sizeLimit = 1024 * 1024 * 5; 
         MultipartRequest multi = new MultipartRequest(request, directory, sizeLimit,
                 "UTF-8", new DefaultFileRenamePolicy());
-    	System.out.println(directory); 
     	
 
     	String action = multi.getParameter("action");
