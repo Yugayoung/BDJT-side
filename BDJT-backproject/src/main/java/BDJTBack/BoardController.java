@@ -73,10 +73,9 @@ public class BoardController extends HttpServlet {
 
         if (action != null && action.equals("upload")) {
             // 파일 업로드 액션
-
-            
             
             System.out.println(directory);
+
             File uploadDir = new File(directory);
             if (!uploadDir.exists()) {
                 uploadDir.mkdirs();
