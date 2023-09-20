@@ -96,7 +96,7 @@ public class BoardController extends HttpServlet {
             }
 
             // 파일 정보를 photo 변수에 저장
-            String photo = "/BDJT/upload/" + savedName; // 웹 경로로 수정
+            String photo = "/BDJT-backproject/upload/" + savedName; // 웹 경로로 수정
 
             String title = multi.getParameter("title");
             String url = multi.getParameter("url");
@@ -113,7 +113,7 @@ public class BoardController extends HttpServlet {
             newBoard.setCreationDate(currentDate);
             newBoard.setOrderRcmnd(0);
             // id 설정 - 필요한 경우 수정
-            // newBoard.setId(userId);
+            newBoard.setId((String)request.getSession().getAttribute("userId"));
             // 데이터베이스에 새 게시물 추가
             boardDAO.insertuploadInfo(newBoard);
             

@@ -108,11 +108,12 @@
                   		<section class="gallery__contents">
                   			<c:forEach items="${galleryList}" var="boardDO">
                   					<div class="gallery__image-container">
-			                    		<img src="${boardDO.photo}" class="gallery__image" alt="Uploaded Photo" onclick="redirectToURL('${boardDO.url}')">
-			                    		<p class="gallery__title">${boardDO.title}</p>
+                  						<p class="gallery__title">${boardDO.title}</p>
+			                    		<img src="${boardDO.photo}" class="gallery__image" alt="Uploaded Photo" onclick="redirectToURL('${boardDO.url}')">			                    		
 			                    		<p class="gallery__title">${boardDO.skill}</p>			                   
 										<button class="gallery__like-button"><i class="fa-regular fa-thumbs-up gallery__like-icon"></i></button>
 										<p class="gallery__likes">${boardDO.orderRcmnd}</p>
+										<p class="gallery__title">${usersDO.github}</p>	
 			        				</div>
 			            	</c:forEach>
 			            <!-- forEach 루프의 끝 -->

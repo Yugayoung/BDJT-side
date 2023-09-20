@@ -71,7 +71,7 @@ public class BoardDO {
 		this.id = id;
 	}
 //	이거 추가
-//	public void setUsers(UsersDO usersDO) {
-//		this.id=usersDO.getId();
-//	}
+	public void setUsers(UsersDO usersDO) {
+		this.id=usersDO.getId();
+	}
 }
