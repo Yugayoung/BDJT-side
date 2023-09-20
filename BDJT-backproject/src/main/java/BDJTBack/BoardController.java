@@ -26,32 +26,8 @@ public class BoardController extends HttpServlet {
         super();
         boardDAO = new BoardDAO();
     }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-
-        // 기본 동작: 갤러리 페이지 로드
-        ArrayList<BoardDO> galleryList = boardDAO.initialBoard();
-        request.setAttribute("galleryList", galleryList);
-        if (action != null) {
-            if (action.equals("sortLatest")) {
-                // 최신순으로 정렬
-                galleryList = boardDAO.initialBoard();
-                request.setAttribute("galleryList", galleryList);
-                System.out.print(galleryList);
-            } else if (action.equals("sortLikes")) {
-                // 추천순으로 정렬
-                galleryList = boardDAO.rcmndBoard();
-                request.setAttribute("galleryList", galleryList);
-                System.out.print(galleryList);
-            } else if (action.equals("search")) {
-                // 기술 검색
-                String techStack = request.getParameter("techStack");
-                if (techStack != null && !techStack.isEmpty()) {
-                    List<BoardDO> searchResults = boardDAO.searchBoardByTechStack(techStack);
-                    request.setAttribute("searchResults", searchResults);
-                }
-
         if (action == null) {
             // 기본 동작: 갤러리 페이지 로드
             ArrayList<BoardDO> galleryList = boardDAO.initialBoard();
@@ -80,12 +56,12 @@ public class BoardController extends HttpServlet {
             if (techStack != null && !techStack.isEmpty()) {
                 List<BoardDO> searchResults = boardDAO.searchBoardByTechStack(techStack);
                 request.setAttribute("searchResults", searchResults);
-
             }
+            ArrayList<BoardDO> galleryList = boardDAO.initialBoard();
+            request.setAttribute("galleryList", galleryList);
+            request.getRequestDispatcher("/WEB-INF/BDJTViews/main.jsp").forward(request, response);
         }
-
-        request.getRequestDispatcher("/WEB-INF/BDJTViews/main.jsp").forward(request, response);
-    }
+    }    
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
@@ -101,11 +77,10 @@ public class BoardController extends HttpServlet {
 
         if (action != null && action.equals("upload")) {
             // 파일 업로드 액션
-            
+
             System.out.println(directory);
             
             // 디렉토리 생성
-
             File uploadDir = new File(directory);
             if (!uploadDir.exists()) {
                 uploadDir.mkdirs();

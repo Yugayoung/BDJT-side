@@ -110,9 +110,9 @@
                   					<div class="gallery__image-container">
 			                    		<img src="${boardDO.photo}" class="gallery__image" alt="${boardDO.url}"> 
 			                    		<p class="gallery__title">${boardDO.title}</p>
-			                    		<p class="gallery__title">${boardDO.skill}</p>
-			                    		<p class="gallery__likes">${boardDO.orderRcmnd}</p>
+			                    		<p class="gallery__title">${boardDO.skill}</p>			                   
 										<button class="gallery__like-button"><i class="fa-regular fa-thumbs-up gallery__like-icon"></i></button>
+										<p class="gallery__likes">${boardDO.orderRcmnd}</p>
 			        				</div>
 			            	</c:forEach>
 			            <!-- forEach 루프의 끝 -->
