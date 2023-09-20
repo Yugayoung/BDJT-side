@@ -32,24 +32,22 @@ public class BoardController extends HttpServlet {
 
         // 기본 동작: 갤러리 페이지 로드
         ArrayList<BoardDO> galleryList = boardDAO.initialBoard();
-        request.setAttribute("galleryList", galleryList);
+        
         if (action != null) {
             	if (action.equals("search")) {
                 // 기술 검색
-            		String techStack = request.getParameter("techStack");
-            		if (techStack != null && !techStack.isEmpty()) {
-            			List<BoardDO> searchResults = boardDAO.searchBoardByTechStack(techStack);
-            			request.setAttribute("searchResults", searchResults);
-            			} else if (action.equals("html")) {
+            		String skill = request.getParameter("skill");
+            		 	if (skill != null && skill.equals("html")) {
             	        	System.out.println("Action: " + galleryList);
             	            galleryList = boardDAO.searchBoardByTechStack("HTML");
-            	        } else if (action.equals("css")) {
+            	        } else if (skill != null && skill.equals("css")) {
             	            galleryList = boardDAO.searchBoardByTechStack("CSS");
-            	        } else if (action.equals("react")) {
+            	        } else if (skill != null && skill.equals("react")) {
             	            galleryList = boardDAO.searchBoardByTechStack("React");
             	        }
             }
         }
+        request.setAttribute("galleryList", galleryList);
         request.getRequestDispatcher("/WEB-INF/BDJTViews/main.jsp").forward(request, response);
     }
     
