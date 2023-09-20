@@ -33,17 +33,23 @@ public class BoardController extends HttpServlet {
             ArrayList<BoardDO> galleryList = boardDAO.initialBoard();
             request.setAttribute("galleryList", galleryList);
             request.getRequestDispatcher("/WEB-INF/BDJTViews/main.jsp").forward(request, response);
-        } else if (action.equals("sortLatest")) {
+        } 
+        
+        else if (action.equals("sortLatest")) {
             // 최신순으로 정렬
             ArrayList<BoardDO> galleryList = boardDAO.initialBoard();
             request.setAttribute("galleryList", galleryList);
             request.getRequestDispatcher("/WEB-INF/BDJTViews/main.jsp").forward(request, response);
-        } else if (action.equals("sortLikes")) {
+        } 
+        
+        else if (action.equals("sortLikes")) {
             // 추천순으로 정렬
             ArrayList<BoardDO> galleryList = boardDAO.rcmndBoard();
             request.setAttribute("galleryList", galleryList);
             request.getRequestDispatcher("/WEB-INF/BDJTViews/main.jsp").forward(request, response);
-        } else if (action.equals("search")) {
+        } 
+        
+        else if (action.equals("search")) {
             // 기술 검색
             String techStack = request.getParameter("techStack");
             
