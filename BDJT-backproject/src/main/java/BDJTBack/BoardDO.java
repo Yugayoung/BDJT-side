@@ -8,8 +8,8 @@ public class BoardDO {
     private String url;
     private String skill;
     private LocalDateTime creationDate;
-    private int orderRcmnd;
     private String id;
+    private String github;
 
 	public BoardDO() {
 		// TODO Auto-generated constructor stub
@@ -55,14 +55,6 @@ public class BoardDO {
 		this.creationDate = creationDate;
 	}
 
-	public int getOrderRcmnd() {
-		return orderRcmnd;
-	}
-
-	public void setOrderRcmnd(int orderRcmnd) {
-		this.orderRcmnd = orderRcmnd;
-	}
-
 	public String getId() {
 		return id;
 	}
@@ -70,8 +62,12 @@ public class BoardDO {
 	public void setId(String id) {
 		this.id = id;
 	}
-//	이거 추가
-	public void setUsers(UsersDO usersDO) {
-		this.id=usersDO.getId();
+
+	public String getGithub() {
+		return github;
+	}
+
+	public void setGithub(String github) {
+		this.github = github;
 	}
 }

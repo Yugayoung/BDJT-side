@@ -1,20 +1,19 @@
 -- 회원 테이블 생성
 CREATE TABLE users (
-    id VARCHAR2(20) PRIMARY KEY,
-    name VARCHAR2(5),
-    password VARCHAR2(20),
+    id VARCHAR2(15) PRIMARY KEY,
+    name VARCHAR2(5) NOT NULL,
+    password VARCHAR2(15) NOT NULL,
     birthdate DATE,
-    github VARCHAR2(30)
+    github VARCHAR2(30) 
 );
 
--- 게시판 테이블 생성
+
 CREATE TABLE board (
     photo VARCHAR2(50),
     title VARCHAR2(15),
     url VARCHAR2(100),
     skill VARCHAR2(20),
     creationdate DATE,
-    orderRcmnd NUMBER,
     id VARCHAR2(20),
     FOREIGN KEY (id) REFERENCES users(id)
 );

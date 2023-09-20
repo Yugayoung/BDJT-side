@@ -88,16 +88,11 @@
                 <div class="max-container">
                     <h1 class="galleryAll__title">Discover the best portfolio</h1>
                     <div class="gallery__array">
-                        <p class="gallery__array-text">정렬</p>
                         <span class="gallery__array-divider"></span>
-                        <div class="gallery__array-buttons">
-                            <button class="sortByLikesButton">최신순</button>
-                            <button class="sortByLatestButton">추천순</button>
-                        </div>
                         <form id="searchForm" method="get" action="BoardController">
                         	<div class="gallery__search">
                             	<input type="text" class="gallery__searchInput" name="skill" id="searchInput" placeholder="기술 스택 검색" />
-                            	<button class="gallery__searchButton" type="submit">
+                            	<button class="gallery__searchButton" type="submit" name="action" value="search">
                                 	<i class="fa-solid fa-magnifying-glass"></i>
                             	</button>                      
                         	</div>
@@ -111,11 +106,8 @@
                   					<div class="gallery__image-container">
                   						<p class="gallery__title">${boardDO.title}</p>
 			                    		<img src="${boardDO.photo}" class="gallery__image" alt="Uploaded Photo" onclick="redirectToURL('${boardDO.url}')">			                    		
-			                    		<p class="gallery__title">${boardDO.skill}</p>			                   
-
-										<button class="gallery__like-button"><i class="fa-regular fa-thumbs-up gallery__like-icon"></i></button>
-										<p class="gallery__likes">${boardDO.orderRcmnd}</p>
-										<p class="gallery__title">${usersDO.github}</p>	
+			                    		<p class="gallery__title">${boardDO.skill}</p>	
+       									<p class="gallery__title">${boardDO.github}</p>   
 			        				</div>
 			            	</c:forEach>
 			            <!-- forEach 루프의 끝 -->
