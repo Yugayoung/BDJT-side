@@ -4,6 +4,7 @@ public class UsersDO {
 	private String id;
 	private String name;
 	private String password;
+	private String confirm;
 	private String birthdate;
 	private String github;
 
@@ -22,11 +23,17 @@ public class UsersDO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPassword() {
+	public String getConfirm() {
 		return password;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setConfirm(String confirm) {
+		this.confirm = confirm;
+	}
+	public String getPassword() {
+		return confirm;
+	}
+	public void setPassword(String confirm) {
+		this.confirm = confirm;
 	}
 	public String getBirthdate() {
 		return birthdate;
