@@ -5,7 +5,7 @@
     	  import="com.oreilly.servlet.*, com.oreilly.servlet.multipart.*"
 		  import="java.util.*"
     	  %>
-<%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c" %>
  
 <%@ include file = "/WEB-INF/BDJTViews/header.jsp" %>
 
@@ -106,12 +106,12 @@
 
                   <div class="gallery__design">
                   		<!-- <section id="gallery"> -->
-                  			<c:forEach items="${galleryList}" var="boardDO">
+                  			<c:forEach items="${galleryList}" var="BoardDO">
                   					<div class="gallery__image-container">
-			                    		<img src="${boardDO.photo}" class="gallery__image" alt="${boardDO.url}"> 
-			                    		<p class="gallery__title">${boardDO.title}</p>
-			                    		<p class="gallery__title">${boardDO.skill}</p>
-			                    		<p class="gallery__likes">${boardDO.orderRcmnd}</p>
+			                    		<img src="${boardDO.getPhoto}" class="gallery__image" alt="${boardDO.url}"> 
+				                    		<p class="gallery__title">${boardDO.title}</p>
+				                    		<p class="gallery__skill">${boardDO.getSkill}</p>
+				                    		<p class="gallery__likes">${boardDO.orderRcmnd}</p>
 										<button class="gallery__like-button"><i class="fa-regular fa-thumbs-up gallery__like-icon"></i></button>
 			        				</div>
 			            	</c:forEach>
