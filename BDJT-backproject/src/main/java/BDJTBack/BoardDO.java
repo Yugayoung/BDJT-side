@@ -70,4 +70,5 @@ public class BoardDO {
 	public void setId(String id) {
 		this.id = id;
 	}
+
 }

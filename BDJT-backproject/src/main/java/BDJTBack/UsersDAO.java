@@ -30,37 +30,39 @@ public class UsersDAO {
 	
 	//회원가입
 	public int insertUserInfo(UsersDO usersDO) {
-		int rowCount = 0;
-		
-		sql = "insert into users (id, name, password, birthdate, github) "
-				+ "values (?, ?, ? ,?, ?)";
-		
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, usersDO.getId());
-			pstmt.setString(2, usersDO.getName());
-			pstmt.setString(3, usersDO.getPassword());
-			pstmt.setString(4, usersDO.getBirthdate());
-			pstmt.setString(5, usersDO.getGithub());
-			
-			pstmt.executeUpdate();
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-		finally {
-			if(pstmt != null) {
-				try {
-					pstmt.close();
-				}
-				catch(Exception e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		
-		return rowCount;
+	    int rowCount = 0;
+
+	    sql = "insert into users (id, name, password, birthdate, github) "
+	            + "values (?, ?, ?, ?, ?)";
+
+	    try {
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, usersDO.getId());
+	        pstmt.setString(2, usersDO.getName());
+	        pstmt.setString(3, usersDO.getPassword());
+	        pstmt.setString(4, usersDO.getBirthdate());
+	        pstmt.setString(5, usersDO.getGithub());
+	        System.out.println("2");
+
+	        rowCount = pstmt.executeUpdate(); 
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        System.out.println(e+"1");
+	    } finally {
+	        if (pstmt != null) {
+	            try {
+	                pstmt.close();
+	                System.out.println("2");
+	            } catch (Exception e) {
+	            	System.out.println(e+"3");
+	                e.printStackTrace();
+	            }
+	        }
+	    }
+
+	    return rowCount; 
 	}
+
 	
 	//로그인 
 	public boolean loginUser(String id, String password) {

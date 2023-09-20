@@ -105,19 +105,19 @@
                     </div>                    
 
                   <div class="gallery__design">
-			            <c:forEach items="${galleryList}" var="boardDO">
-			                <div class="gallery__image-container">
-			                    <img src="${boardDO.photo}" class="gallery__image" alt="${boardDO.title}">
-			                    <p class="gallery__title">${boardDO.title}</p>
-								<button class="gallery__like-button"><i class="fa-regular fa-thumbs-up gallery__like-icon"></i></button>
-			                </div>
-			            </c:forEach>
+                  		<!-- <section id="gallery"> -->
+                  			<c:forEach items="${galleryList}" var="boardDO">
+                  					<div class="gallery__image-container">
+			                    		<img src="${boardDO.photo}" class="gallery__image" alt="${boardDO.url}"> 
+			                    		<p class="gallery__title">${boardDO.title}</p>
+			                    		<p class="gallery__title">${boardDO.skill}</p>
+			                    		<p class="gallery__likes">${boardDO.orderRcmnd}</p>
+										<button class="gallery__like-button"><i class="fa-regular fa-thumbs-up gallery__like-icon"></i></button>
+			        				</div>
+			            	</c:forEach>
 			            <!-- forEach 루프의 끝 -->
+                    <!-- 	</section> -->
 			        </div>
-                    <section id="gallery__contents"></section>
-
-                    </div>
-
             </section>
         </main>
         

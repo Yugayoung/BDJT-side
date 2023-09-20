@@ -35,7 +35,8 @@
                   <input
                     class="signup__input"
                     type="password"
-                    id="confirm__passworda"
+                    id="confirm"
+                   	name="confirm"
                     placeholder="비밀번호 확인"
                   />
                 </label>
