@@ -215,7 +215,7 @@
 } 
 
 /* 프로젝트 게시판 */
-#gallery {
+#gallery__all {
   background-color: var(--color-accent-variant);
   grid-row: span 3;
   padding: 0rem 1rem 2rem 1rem;
@@ -243,7 +243,15 @@
   background-color: var(--color-white);
   box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
     /* 내용이 없을 때의 높이 지정 */
-    min-height: 300px; 
+    min-height: 400px; 
+}
+
+.gallery__contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 5rem;
 }
 
 .gallery__image-container {
@@ -391,11 +399,5 @@
 }
 
 
-/*#gallery__contents {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem 5rem;
-}*/
+
 

@@ -84,7 +84,7 @@
             </section>
 
             <!-- Gallery -->
-            <section id="gallery">
+            <section id="gallery__all">
                 <div class="max-container">
                     <h1 class="galleryAll__title">Discover the best portfolio</h1>
                     <div class="gallery__array">
@@ -105,7 +105,7 @@
                     </div>                    
 
                   <div class="gallery__design">
-                  		<!-- <section id="gallery"> -->
+                  		<section class="gallery__contents">
                   			<c:forEach items="${galleryList}" var="boardDO">
                   					<div class="gallery__image-container">
 			                    		<img src="${boardDO.photo}" class="gallery__image" alt="${boardDO.url}"> 
@@ -116,8 +116,9 @@
 			        				</div>
 			            	</c:forEach>
 			            <!-- forEach 루프의 끝 -->
-                    <!-- 	</section> -->
+                   		</section>
 			        </div>
+			    </div>
             </section>
         </main>
         

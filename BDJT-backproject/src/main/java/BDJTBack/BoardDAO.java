@@ -87,9 +87,9 @@ public class BoardDAO {
 	public ArrayList<BoardDO> initialBoard() {
 		ArrayList<BoardDO> galleryList = new ArrayList<BoardDO>();
 		sql = "SELECT photo, title, url, skill, creationDate, orderRcmnd " +
-			      "FROM board " +
+			      "FROM board " ;
 			     // "WHERE u.id = b.id " +
-			      "ORDER BY b.orderRcmnd DESC";
+			     // "ORDER BY b.orderRcmnd DESC";
 		
 		try {
 			stmt = conn.createStatement();
@@ -110,6 +110,8 @@ public class BoardDAO {
                 boardDO.setCreationDate(creationDate);
 				boardDO.setOrderRcmnd(rs.getInt("orderRcmnd"));
 //				userDO.setGithub(rs.getString("github"));
+				
+//				boardDO.setUsers(userDO);
 				
 				galleryList.add(boardDO);
 			}
@@ -159,6 +161,8 @@ public class BoardDAO {
                 boardDO.setCreationDate(creationDate);
 				boardDO.setOrderRcmnd(rs.getInt("orderRcmnd"));
 				userDO.setGithub(rs.getString("github"));
+				
+//				boardDO.setUsers(userDO);
 				
 				galleryList.add(boardDO);
 			}
