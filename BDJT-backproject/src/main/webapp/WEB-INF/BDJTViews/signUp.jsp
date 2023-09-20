@@ -75,8 +75,14 @@
                 회원가입
               </button>
               <button class="back__button" type="button" id="back__button">
-                뒤로가기
+         			뒤로가기
               </button>
+              <script>
+				  document.getElementById("back__button").addEventListener("click", function() {
+				    window.history.back(); // This will go back in the browser's history.
+				  });
+			  </script>
+              
             </form>
           </div>
         </div>

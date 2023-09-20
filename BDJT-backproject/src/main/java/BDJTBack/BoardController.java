@@ -26,36 +26,36 @@ public class BoardController extends HttpServlet {
         super();
         boardDAO = new BoardDAO();
     }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         String action = request.getParameter("action");
-        if (action == null) {
-            // 기본 동작: 갤러리 페이지 로드
-            ArrayList<BoardDO> galleryList = boardDAO.initialBoard();
-            request.setAttribute("galleryList", galleryList);
-            request.getRequestDispatcher("/WEB-INF/BDJTViews/main.jsp").forward(request, response);
-        } else if (action.equals("sortLatest")) {
-            // 최신순으로 정렬
-            ArrayList<BoardDO> galleryList = boardDAO.initialBoard();
-            request.setAttribute("galleryList", galleryList);
-            request.getRequestDispatcher("/WEB-INF/BDJTViews/main.jsp").forward(request, response);
-        } else if (action.equals("sortLikes")) {
-            // 추천순으로 정렬
-            ArrayList<BoardDO> galleryList = boardDAO.rcmndBoard();
-            request.setAttribute("galleryList", galleryList);
-            request.getRequestDispatcher("/WEB-INF/BDJTViews/main.jsp").forward(request, response);
-        } else if (action.equals("search")) {
-            // 기술 검색
-            String techStack = request.getParameter("techStack");
-            
-            if (techStack != null && !techStack.isEmpty()) {
-                List<BoardDO> searchResults = boardDAO.searchBoardByTechStack(techStack);
-                request.setAttribute("searchResults", searchResults);
+
+        // 기본 동작: 갤러리 페이지 로드
+        ArrayList<BoardDO> galleryList = boardDAO.initialBoard();
+        request.setAttribute("galleryList", galleryList);
+        if (action != null) {
+            if (action.equals("sortLatest")) {
+                // 최신순으로 정렬
+                galleryList = boardDAO.initialBoard();
+                request.setAttribute("galleryList", galleryList);
+                System.out.print(galleryList);
+            } else if (action.equals("sortLikes")) {
+                // 추천순으로 정렬
+                galleryList = boardDAO.rcmndBoard();
+                request.setAttribute("galleryList", galleryList);
+                System.out.print(galleryList);
+            } else if (action.equals("search")) {
+                // 기술 검색
+                String techStack = request.getParameter("techStack");
+                if (techStack != null && !techStack.isEmpty()) {
+                    List<BoardDO> searchResults = boardDAO.searchBoardByTechStack(techStack);
+                    request.setAttribute("searchResults", searchResults);
+                }
             }
-            ArrayList<BoardDO> galleryList = boardDAO.initialBoard();
-            request.setAttribute("galleryList", galleryList);
-            request.getRequestDispatcher("/WEB-INF/BDJTViews/main.jsp").forward(request, response);
         }
-    }    
+
+        request.getRequestDispatcher("/WEB-INF/BDJTViews/main.jsp").forward(request, response);
+    }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
@@ -77,12 +77,6 @@ public class BoardController extends HttpServlet {
             
             
             System.out.println(directory);
-
-            String directory = getServletContext().getRealPath("/Users/9a_orn_/Employment/full-stack/project/BDJT-side/BDJT-backproject/src/main/webapp/BDJT/images"); // 업로드 디렉토리 경로 수정
-            int sizeLimit = 1024 * 1024 * 5; // 5MB 제한
-            MultipartRequest multi = new MultipartRequest(request, directory, sizeLimit,
-                    "UTF-8", new DefaultFileRenamePolicy());
-            // 디렉토리 생성
             File uploadDir = new File(directory);
             if (!uploadDir.exists()) {
                 uploadDir.mkdirs();
