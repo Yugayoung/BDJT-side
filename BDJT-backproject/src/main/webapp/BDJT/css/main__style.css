@@ -268,10 +268,12 @@
 
 .gallery__title {
   margin-top: 1rem;
-  font-size: 17px;
+  font-size: 20px;
   color: var(--color-text);
   text-align: center; 
   border: 3rem;
+  margin-bottom: 0.7rem;
+  font-weight: bold;
 }
 
 .empty-gallery-message {
@@ -282,35 +284,10 @@
   margin: auto;
 }
 
-/* 좋아요 버튼 */
-.gallery__like-button {
-  display: inline-block;
-  background-color: white;
-  border: none;
-  border-radius: 4px;
-  margin-right: 0.1rem;
-}
-
-.gallery__like-icon {
-  font-size: 1.4rem;
-  transition: all 300ms ease;
-  color: rgb(112, 107, 255);
-  cursor: pointer; 
-  user-select: none; 
-}
-
-.gallery__likes {
-  display: inline-block;
-  margin-right: 0rem; 
-}
-
-.gallery__like-button:hover .gallery__like-icon {
-  transform: scale(1.2);
-}
-
-.gallery__array {
+.gallery__array, .gallery__contents-bottom {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .gallery__array-text {
@@ -332,19 +309,35 @@
   height: 1rem;
 }
 
-.sortByLatestButton, .sortByLikesButton{
-  background-color: transparent;
-  color: var(--color-accent);
-  border: none;
-  font-size: 1rem;
-  padding: 0rem 0.7rem 0rem 0.4rem;
+.gallery__image {
+	margin-bottom: 0.7rem;
 }
 
-.sortByLatestButton:hover, .sortByLikesButton:hover {
-  color: var(--color-text);
+
+.gallery__github {
+  display: flex; 
+  align-items: center; 
+}
+
+.fa-brands.fa-github {
+  font-size: 20px; 
+  margin-right: 5px; 
+}
+
+.gallery__github p {
+  margin: 0; 
+  color: var(--color-navy);
+}
+
+.gallery__skill {
+  color: var(--color-blue);
 }
 
 /* 검색창 스타일 */
+
+#searchForm {
+	padding: 1.3rem 0rem 0.7rem 0rem;
+}
 .gallery__search {
   margin-left: auto;
   margin-right: 10px;

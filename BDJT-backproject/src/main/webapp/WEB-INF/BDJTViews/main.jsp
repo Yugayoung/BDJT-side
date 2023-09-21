@@ -86,9 +86,9 @@
             <!-- Gallery -->
             <section id="gallery__all">
                 <div class="max-container">
-                    <h1 class="galleryAll__title">Discover the best portfolio</h1>
+                    
                     <div class="gallery__array">
-                        <span class="gallery__array-divider"></span>
+          					<h1 class="galleryAll__title">Discover the best portfolio</h1>
                         <form id="searchForm" method="get" action="BoardController">
                         	<div class="gallery__search">
                             	<input type="text" class="gallery__searchInput" name="skill" id="searchInput" placeholder="기술 스택 검색" />
@@ -106,8 +106,17 @@
                   					<div class="gallery__image-container">
                   						<p class="gallery__title">${boardDO.title}</p>
 			                    		<img src="${boardDO.photo}" class="gallery__image" alt="Uploaded Photo" onclick="redirectToURL('${boardDO.url}')">			                    		
-			                    		<p class="gallery__title">${boardDO.skill}</p>	
-       									<p class="gallery__github">${boardDO.github}</p>   
+			                    		
+			                    		<div class = "gallery__contents-bottom">
+			                    			<div class = "gallery__github">
+			                    				<i class="fa-brands fa-github"></i>
+			                    				<p class="gallery__github">${boardDO.github}</p> 
+			                    			</div>
+			                    			<div class="gallery__skill">${boardDO.skill}</div>	
+			                    		</div>
+			                    		
+			                   
+       									  
 			        				</div>
 			            	</c:forEach>
 			            <!-- forEach 루프의 끝 -->
