@@ -58,7 +58,7 @@ public class BoardController extends HttpServlet {
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
-        String directory = "D:\\000.develop\\BF-semi-Project\\BDJT-side\\BDJT-backproject\\BDJT-backproject\\src\\main\\webapp/upload";
+        String directory = "/Users/9a_orn_/Employment/full-stack/project/BDJT-side/BDJT-backproject/src/main/webapp/upload";
         int sizeLimit = 1024 * 1024 * 5; 
         MultipartRequest multi = new MultipartRequest(request, directory, sizeLimit,
                 "UTF-8", new DefaultFileRenamePolicy());

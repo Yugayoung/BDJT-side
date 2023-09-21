@@ -29,7 +29,14 @@ public class UserController extends HttpServlet {
         if (action == null) {
             // 기본 액션 (로그인 페이지 표시)
             request.getRequestDispatcher("/WEB-INF/BDJTViews/login.jsp").forward(request, response);
-        } else if (action.equals("login")) {
+        } else if (action.equals("loginpage")) {
+            // 기본 액션 (로그인 페이지 표시)
+            request.getRequestDispatcher("/WEB-INF/BDJTViews/login.jsp").forward(request, response);
+        }else if (action.equals("signUppage")) {
+            // 기본 액션 (로그인 페이지 표시)
+            request.getRequestDispatcher("/WEB-INF/BDJTViews/signUp.jsp").forward(request, response);
+        }
+        else if (action.equals("login")) {
             // 로그인 액션
             String id = request.getParameter("id");
             String password = request.getParameter("password");
@@ -96,7 +103,7 @@ public class UserController extends HttpServlet {
 
             if (rowCount > 0) {
                 // 회원가입 성공
-                request.setAttribute("registrationMessage", "회원가입이 완료되었습니다.");
+                request.setAttribute("registrationError", "회원가입이 완료되었습니다.");
                 request.getRequestDispatcher("/WEB-INF/BDJTViews/login.jsp").forward(request, response);
                 System.out.println("회원가입 성공: " + id);
             } else {

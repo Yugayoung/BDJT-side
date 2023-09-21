@@ -72,20 +72,24 @@
               </div>
               <div id="password-match-message"></div>
               <!--추가: 비밀번호 일치 여부 메시지-->
-              <button class="signup__submit__button" type="submit" name="action" value="register">
-                회원가입
-              </button>
-              <button class="back__button" type="button" id="back__button">
-         			뒤로가기
-              </button>
-              <script>
-				  document.getElementById("back__button").addEventListener("click", function() {
-				    window.history.back(); // This will go back in the browser's history.
-				  });
-			  </script>
+              <div class="gallery__array-buttons">
+                    <button class="signup__submit__button" type="submit" name="action" value="register">
+                		회원가입
+              		</button>
+              		<button class="back__button" type="submit" id="back__button" name="action" value="loginpage" >
+         				로그인
+              		</button>
+              </div>
+             
               
             </form>
+            
+            
+				
           </div>
+          <c:if test="${not empty registrationError}"> 
+   				<div class="error-message">${registrationError}</div>
+		  </c:if>
         </div>
       </section>
     </div>
@@ -94,10 +98,11 @@
         <div class="max-container">
           <h2 class="information__title">ProPlan</h2>
           <p class="information__title">
-            &copy; :마늘:육쪼마늘 - All rights reserved
+            &copy; :육쪼마늘 - All rights reserved
           </p>
         </div>
       </div>
     </footer>
+    
   </body>
 </html>

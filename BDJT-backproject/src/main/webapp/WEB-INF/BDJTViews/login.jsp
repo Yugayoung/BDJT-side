@@ -15,13 +15,22 @@
                         <label for="username" class="login__label">
                             <input class="login__input" type="text" id="username" name="id" placeholder="아이디"> <br>
                         </label>
+                     
                         <label for="password" class="login__label">
                             <input class="login__input" type="password" id="password" name="password" placeholder="비밀번호"> <br>
                         </label>
-                        <button class="login__button" type="submit" name="action" value="login">로그인</button>
-                        <button class="signup__button" id="signup-button" name="action" value="register" type=submit">회원가입</button>
+                  
+                        <div class="gallery__array-buttons">
+                            <button class="login__button" type="submit" name="action" value="login">로그인</button>
+                        	<button class="signup__button" id="signup-button" name="action" value="signUppage" type="submit">회원가입</button>
+                        </div>
+                        
                     </div>
                 </form>
+                <br />
+                <c:if test="${not empty loginError}"> 
+   					 <div class="error-message">${loginError}</div>
+				</c:if>
             </div>
         </div>
     </section>
@@ -30,7 +39,7 @@
         <div class="max-container">
           <h2 class="information__title">ProPlan</h2>
           <p class="information__title">
-            &copy; :마늘:육쪼마늘 - All rights reserved
+            &copy; :육쪼마늘 - All rights reserved
           </p>
         </div>
       </div>
